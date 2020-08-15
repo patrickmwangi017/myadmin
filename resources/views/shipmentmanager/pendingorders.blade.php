@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appshipmentmanager')
 
 
 
@@ -24,7 +24,7 @@
 <table class="table">
 <thead class="text-primary">
 <th>Order<br>Id</th>
-<th>Cust Name</th>
+<!-- <th>Cust Name</th> -->
 <!-- <th>Ordered</br>goods</th> -->
 <th>Address</th>
 <th>Allocated</br>Driver</th>
@@ -36,28 +36,8 @@
 @if($row->payment_status == "Approved" && $row->allocation_status=="Pending")
 <tr>
 <td>{{$row->order_id}}</td>
-<td>{{$row->name}}</td>
-<!-- <td>
 
-<div class="panel panel-default">
-<div class="panel-body">
-<ul class="list-group">
-@foreach($row->cart->items as $item)
-<li class="list-group-item">
- <span class="badge"> {{$item['price']}} </span> 
- {{ $item['item']['productName']}}  | {{$item['qty']}} Units
- </li>
-@endforeach
-</ul>
-</div>
-<div class="panel-footer">
-<strong>Total Price: {{$row->cart->totalPrice}}</strong>
-</div>
-</div>
-
-</td> -->
-
-<td>{{$row->address}}</td>
+<td>{{$row->town}} <br> {{$row->address}}</td>
 
  
 <td>

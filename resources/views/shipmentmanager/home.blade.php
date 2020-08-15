@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.appshipmentmanager')
 
 
 
 @section('content')
-<a href="" class="btn btn-danger pull-right" role="button">Export PDF</a>
+<a href="{{URL::to('shipmentmanager/shipmentreport')}}" class="btn btn-danger pull-right" role="button">Export PDF</a>
 
 <h5>All Orders</h5> 
 <div class="col-md-16">
@@ -26,7 +26,7 @@
 <table class="table">
 <thead class="text-primary">
 <th>Order<br>Id</th>
-<th>Cust Name</th>
+<!-- <th>Cust Name</th> -->
 <!-- <th>Ordered</br>goods</th> -->
 <th>Address</th>
 <th>Allocated</br>Driver</th>
@@ -38,7 +38,7 @@
 @if($row->payment_status == "Approved")
 <tr>
 <td>{{$row->order_id}}</td>
-<td>{{$row->name}}</td>
+<!-- <td>{{$row->name}}</td> -->
 <!-- <td>
 
 <div class="panel panel-default">
@@ -59,7 +59,7 @@
 
 </td> -->
 
-<td>{{$row->address}}</td>
+<td>{{$row->town}} <br> {{$row->address}}</td>
 
  
 <td>
@@ -70,18 +70,17 @@
 
                                 <option value="-1">Select...</option>
                                         @foreach ($drivers as $driver )
-                                        @if($driver->status=="Free")
-                                        <option value="{{ $driver['id'] }}"> {{$driver->id}}:{{$driver->name}}-{{$driver->status}}</option>
-                                        @endif
+                                        
+                                        <option value="{{ $driver['id'] }}">{{$driver->name}}</option>
+                                        
                                          @endforeach
                                     </select>
                                     <td><button type="submit" class="btn btn-info">Allocate</button></td>
                                       {{ csrf_field() }} 
-                                      </form>      
-                                             
+                                      </form>             
 @elseif($row->allocation_status == "Allocated")
  @foreach ($drivers as $driver ) 
- @if($driver->id==$row->driver_id)Driver Id:{{$driver->id}}<br>Name:{{$driver->name}}
+ @if($driver->id==$row->driver_id)Name:{{$driver->name}}
  @endif
 @endforeach
  @endif</td>

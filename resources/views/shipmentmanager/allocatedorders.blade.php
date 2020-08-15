@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appshipmentmanager')
 
 
 
@@ -23,11 +23,11 @@
 <table class="table">
 <thead class="text-primary">
 <th>Order<br>Id</th>
-<th>Cust Name</th>
+<!-- <th>Cust Name</th> -->
 <th>Address</th>
 <th>Driver</br>Allocated</th>
-<th>Delivery Status</th>
-<th>Confirmation Status</th>
+<th>Delivery</br>Status</th>
+<th>Confirmation</br>Status</th>
 
 </thead>
 <tbody>
@@ -35,8 +35,8 @@
 @if($row->payment_status == "Approved" && $row->allocation_status == "Allocated" )
 <tr>
 <td>{{$row->order_id}}</td>
-<td>{{$row->name}}</td>
-<td>{{$row->address}}</td>
+<!-- <td>{{$row->name}}</td> -->
+<td>{{$row->town}} <br> {{$row->address}}</td>
 <td>
 @foreach ($drivers as $driver ) 
  @if($driver->id==$row->driver_id)Driver Id:{{$driver->id}}<br>Name:{{$driver->name}}
