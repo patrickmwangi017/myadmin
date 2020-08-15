@@ -474,7 +474,8 @@
                         <ul class="treeview-menu">
                         <li><a href="{{URL::to('accountantsreport')}}"><i class="fa fa-clone"></i>Finance Controllers Report</a></li>
                         <li><a href="{{URL::to('shipmentmanagersreport')}}"><i class="fa fa-clone"></i>Shipmentmanagers Report</a></li>
-                        <li><a href="{{URL::to('driversreport')}}"><i class="fa fa-clone"></i>Drivers Report</a></li>                        
+                        <li><a href="{{URL::to('driversreport')}}"><i class="fa fa-clone"></i>Drivers Report</a></li>   
+                        <li><a href="{{URL::to('masonsreport')}}"><i class="fa fa-clone"></i>Suppliers Report</a></li>                        
                         <li><a href="{{URL::to('customersreport')}}"><i class="fa fa-clone"></i>Customers Report</a></li>
                             <li><a href="{{URL::to('accountantspaymentreport')}}"><i class="fa fa-clone"></i>Payment Report</a></li>
                             <!-- <li><a href="{{URL::to('ordermanagerordersreport')}}"><i class="fa fa-money"></i> Orders Report</a></li> -->

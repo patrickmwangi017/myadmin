@@ -16,7 +16,9 @@ class accountants extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    public function admins() {
+        return $this->belongsTo('App\admins');
+    }
     
 public function orders() {
     return $this->hasMany('App\Order');

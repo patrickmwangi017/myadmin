@@ -17,7 +17,9 @@ class admins extends Authenticatable
         'password', 'remember_token',
     ];
 
-    
+    public function accountant() {
+        return $this->hasMany('App\accountants');
+    }
 public function orders() {
     return $this->hasMany('App\Order');
 }

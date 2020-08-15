@@ -672,9 +672,10 @@ class adminsController extends Controller
 
 public function customersreport()
     {
+        $id=1;
         $customers = User::all();
 
-        $pdf = PDF::loadView('admins/customersreport',compact(['drivers']));
+        $pdf = PDF::loadView('admins/customersreport',compact(['customers']));
         return $pdf->stream('DriversReport_'.$id.'.pdf');
 
     }
@@ -682,7 +683,7 @@ public function customersreport()
     public function driversreport()
     {
 
-          
+        $id=1;
         $drivers = drivers::all();
 
         $pdf = PDF::loadView('admins/driversreport',compact(['drivers']));
@@ -692,18 +693,17 @@ public function customersreport()
 
     public function masonsreport()
     {
-        include(app_path() . '/fpdf.php');
-        $shipments = shipment::all();
-        // $orders = Auth::user()->orders;
-        $shipments->transform(function($shipment, $key) {
-            $shipment->cart = unserialize($shipment->cart);
-            return $shipment;
-        });
-        return view('admins/masonsreport', ['shipments' => $shipments]);
+        $id=1;
+        $suppliers = suppliers::all();
+
+        $pdf = PDF::loadView('admins/masonsreport',compact(['suppliers']));
+        return $pdf->stream('SupplierssReport_'.$id.'.pdf');
+        
     }
 
     public function accountantsreport()
-    {
+    { 
+        $id=1;
         $accountants = accountants::all();
 
         $pdf = PDF::loadView('admins/accountantsreport',compact(['accountants']));
@@ -727,7 +727,7 @@ public function customersreport()
     public function shipmentmanagersreport()
     {
 
-        
+        $id=1;
         $shipmentmanagers = shipmentmanager::all();
 
         $pdf =PDF::loadView('admins/shipmentmanagersreport',compact(['shipmentmanagers']));

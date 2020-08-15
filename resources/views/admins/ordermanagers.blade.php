@@ -22,19 +22,7 @@
 
 </form>
 </div>
-<div class="col-md-5">
-<div class="box box-default box-solid">
-<div class="box-header with-border">
 
-                    <h3 class="box-title">Add new Ordermanager</h3>
-                    <a href="#addSupplyer" role="button" class="btn btn-warning btn-sm  pull-right" title="Add new Product" data-toggle="modal"><i class="fa fa-user-plus" ></i></a>
-
-
-
-                    <!-- /.box-tools -->
-                </div>
-                </div>
-                </div>
 
 
 <!-- <div class="table-responsive"> -->
